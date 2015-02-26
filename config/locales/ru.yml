@@ -1,0 +1,75 @@
+en:
+  refinery:
+    plugins:
+      advertisement_images:
+        title: Advertisement Images
+      categories:
+        title: Categories
+      advertisements:
+        title: Объявления
+    advertisements:
+      admin:
+        advertisement_images:
+          actions:
+            create_new: Add New Advertisement Image
+            reorder: Reorder Advertisement Images
+            reorder_done: Done Reordering Advertisement Images
+          records:
+            title: Advertisement Images
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Advertisement Images yet. Click "Add New Advertisement
+              Image" to add your first advertisement image.
+          advertisement_image:
+            view_live_html: View this advertisement image live <br/><em>(opens in a new window)</em>
+            edit: Edit this advertisement image
+            delete: Remove this advertisement image forever
+        categories:
+          actions:
+            create_new: Добавить новую категорию
+            advertisements: Список объявлений
+            reorder: Изменить порядок
+            reorder_done: Закончить изменение порядка
+          records:
+            title: Категории
+            sorry_no_results: Извините, ничего не найдено.
+            no_items_yet: Категории отсутствуют. Нажмите "Добавить новую категорию".
+          category:
+            view_live_html: Предварительный просмотр категории<br/><em>(открывается в новом окне)</em>
+            edit: Редактировать эту категорию
+            delete: Удалить эту категорию
+            confirm: "\nУдаление категории приведет к тому, что будут удалены все объявления в этой категории!"
+        advertisements:
+          actions:
+            create_new: Добавить новое объявление
+            categories: Список категорий
+            reorder: Изменить порядок
+            reorder_done: Закончить изменение порядка
+          records:
+            title: Объявления
+            sorry_no_results: Извините, ничего не найдено.
+            no_items_yet: Объявления отсутствуют. Нажмите "Добавить новое объявление".
+          advertisement:
+            view_live_html: Предварительный объявления <br/><em>(открывается в новом окне)</em>
+            edit: Редактировать это объявление
+            delete: Удалить это объявление
+      advertisement_images:
+        show:
+          other: Other Advertisement Images
+      categories:
+        show:
+          other: Other Categories
+      advertisements:
+        show:
+          other: Other Advertisements
+  activerecord:
+    attributes:
+      refinery/advertisements/advertisement_image:
+        image: Изображение
+        advertisement: Объявление
+      refinery/advertisements/category:
+        name: Название
+      refinery/advertisements/advertisement:
+        title: Заголовок
+        body: Содержание
+        category: Категория
+        expiry_date: Дата завершения показа

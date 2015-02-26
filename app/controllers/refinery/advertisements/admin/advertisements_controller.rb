@@ -3,7 +3,7 @@ module Refinery
     module Admin
       class AdvertisementsController < ::Refinery::AdminController
 
-        crudify :'refinery/advertisements/advertisements'
+        crudify :'refinery/advertisements/advertisement'
 
         protected
 
