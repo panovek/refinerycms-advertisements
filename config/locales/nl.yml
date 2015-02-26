@@ -1,10 +1,44 @@
 nl:
   refinery:
     plugins:
+      advertisement_images:
+        title: Advertisement Images
+      categories:
+        title: Categories
       advertisements:
         title: Advertisements
     advertisements:
       admin:
+        advertisement_images:
+          actions:
+            create_new: Nieuwe Advertisement Image toevoegen
+            reorder: De volgorde van de Advertisement Images wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Advertisement Image-volgorde
+          records:
+            title: Advertisement Images
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Advertisement Images. Druk op 'Nieuwe Advertisement
+              Image toevoegen' om de eerste toe te voegen.
+          advertisement_image:
+            view_live_html: Deze advertisement image op de website bekijken <br/><em>(opent
+              in een nieuw venster)</em>
+            edit: Bewerk deze advertisement image
+            delete: Deze advertisement image definitief verwijderen
+        categories:
+          actions:
+            create_new: Nieuwe Category toevoegen
+            reorder: De volgorde van de Categories wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Category-volgorde
+          records:
+            title: Categories
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Categories. Druk op 'Nieuwe Category toevoegen'
+              om de eerste toe te voegen.
+          category:
+            view_live_html: Deze category op de website bekijken <br/><em>(opent in
+              een nieuw venster)</em>
+            edit: Bewerk deze category
+            delete: Deze category definitief verwijderen
         advertisements:
           actions:
             create_new: Nieuwe Advertisement toevoegen
@@ -13,17 +47,30 @@ nl:
           records:
             title: Advertisements
             sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
-            no_items_yet: Er zijn nog geen Advertisements. Druk op 'Nieuwe Advertisement toevoegen' om de eerste toe te voegen.
+            no_items_yet: Er zijn nog geen Advertisements. Druk op 'Nieuwe Advertisement
+              toevoegen' om de eerste toe te voegen.
           advertisement:
-            view_live_html: Deze advertisement op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            view_live_html: Deze advertisement op de website bekijken <br/><em>(opent
+              in een nieuw venster)</em>
             edit: Bewerk deze advertisement
             delete: Deze advertisement definitief verwijderen
+      advertisement_images:
+        show:
+          other: Andere Advertisement Images
+      categories:
+        show:
+          other: Andere Categories
       advertisements:
         show:
           other: Andere Advertisements
   activerecord:
     attributes:
-      'refinery/advertisements/advertisement':
+      refinery/advertisements/advertisement_image:
+        image: Image
+        advertisement: Advertisement
+      refinery/advertisements/category:
+        name: Name
+      refinery/advertisements/advertisement:
         title: Title
         body: Body
         expiry_date: Expiry Date

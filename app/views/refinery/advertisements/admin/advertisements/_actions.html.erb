@@ -5,6 +5,10 @@
     </li>
   <% end %>
   <li>
+    <%= link_to t('.categories'), refinery.advertisements_admin_categories_path,
+                :class => "go_icon" %>
+  </li>
+  <li>
     <%= link_to t('.create_new'), refinery.new_advertisements_admin_advertisement_path,
                  :class => "add_icon" %>
   </li>

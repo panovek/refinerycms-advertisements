@@ -1,0 +1,29 @@
+<ul>
+  <% if ::Refinery::Advertisements::Admin::CategoriesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.advertisements_admin_categories_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.advertisements'), refinery.advertisements_admin_advertisements_path,
+                :class => "go_icon" %>
+  </li>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_advertisements_admin_category_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Advertisements::Admin::CategoriesController.sortable? && ::Refinery::Advertisements::Category.many? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Categories"),
+                 refinery.advertisements_admin_categories_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Categories"),
+                 refinery.advertisements_admin_categories_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

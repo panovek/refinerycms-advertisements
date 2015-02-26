@@ -1,29 +1,77 @@
 en:
   refinery:
     plugins:
+      advertisement_images:
+        title: Advertisement Images
+      categories:
+        title: Categories
       advertisements:
         title: Advertisements
     advertisements:
       admin:
+        advertisement_images:
+          actions:
+            create_new: Add New Advertisement Image
+            reorder: Reorder Advertisement Images
+            reorder_done: Done Reordering Advertisement Images
+          records:
+            title: Advertisement Images
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Advertisement Images yet. Click "Add New Advertisement
+              Image" to add your first advertisement image.
+          advertisement_image:
+            view_live_html: View this advertisement image live <br/><em>(opens in
+              a new window)</em>
+            edit: Edit this advertisement image
+            delete: Remove this advertisement image forever
+        categories:
+          actions:
+            create_new: Add New Category
+            advertisements: List of Advertisements
+            reorder: Reorder Categories
+            reorder_done: Done Reordering Categories
+          records:
+            title: Categories
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Categories yet. Click "Add New Category" to
+              add your first category.
+          category:
+            view_live_html: View this category live <br/><em>(opens in a new window)</em>
+            edit: Edit this category
+            delete: Remove this category forever
         advertisements:
           actions:
             create_new: Add New Advertisement
+            categories: List of Category
             reorder: Reorder Advertisements
             reorder_done: Done Reordering Advertisements
           records:
             title: Advertisements
             sorry_no_results: Sorry! There are no results found.
-            no_items_yet: There are no Advertisements yet. Click "Add New Advertisement" to add your first advertisement.
+            no_items_yet: There are no Advertisements yet. Click "Add New Advertisement"
+              to add your first advertisement.
           advertisement:
-            view_live_html: View this advertisement live <br/><em>(opens in a new window)</em>
+            view_live_html: View this advertisement live <br/><em>(opens in a new
+              window)</em>
             edit: Edit this advertisement
             delete: Remove this advertisement forever
+      advertisement_images:
+        show:
+          other: Other Advertisement Images
+      categories:
+        show:
+          other: Other Categories
       advertisements:
         show:
           other: Other Advertisements
   activerecord:
     attributes:
-      'refinery/advertisements/advertisement':
+      refinery/advertisements/advertisement_image:
+        image: Image
+        advertisement: Advertisement
+      refinery/advertisements/category:
+        name: Name
+      refinery/advertisements/advertisement:
         title: Title
         body: Body
         expiry_date: Expiry Date

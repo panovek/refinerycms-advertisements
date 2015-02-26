@@ -1,10 +1,43 @@
 sk:
   refinery:
     plugins:
+      advertisement_images:
+        title: Advertisement Images
+      categories:
+        title: Categories
       advertisements:
         title: Advertisements
     advertisements:
       admin:
+        advertisement_images:
+          actions:
+            create_new: Pridať Advertisement Image
+            reorder: Preusporiadať Advertisement Images
+            reorder_done: Koniec radenia Advertisement Images
+          records:
+            title: Advertisement Images
+            sorry_no_results: "Ľutujeme, ale neboli nájdené žiadne výsledky."
+            no_items_yet: Nie sú vytvorené žiadne Advertisement Images. Kliknite na
+              "Pridať Advertisement Image" pre pridanie prvého advertisement image.
+          advertisement_image:
+            view_live_html: Zobraziť náhľad advertisement image<br/><em>(otvorí sa
+              v novom okne)</em>
+            edit: Upraviť advertisement image
+            delete: Zmazať advertisement image
+        categories:
+          actions:
+            create_new: Pridať Category
+            reorder: Preusporiadať Categories
+            reorder_done: Koniec radenia Categories
+          records:
+            title: Categories
+            sorry_no_results: "Ľutujeme, ale neboli nájdené žiadne výsledky."
+            no_items_yet: Nie sú vytvorené žiadne Categories. Kliknite na "Pridať
+              Category" pre pridanie prvého category.
+          category:
+            view_live_html: Zobraziť náhľad category<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť category
+            delete: Zmazať category
         advertisements:
           actions:
             create_new: Pridať Advertisement
@@ -12,18 +45,31 @@ sk:
             reorder_done: Koniec radenia Advertisements
           records:
             title: Advertisements
-            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
-            no_items_yet: Nie sú vytvorené žiadne Advertisements. Kliknite na "Pridať Advertisement" pre pridanie prvého advertisement.
+            sorry_no_results: "Ľutujeme, ale neboli nájdené žiadne výsledky."
+            no_items_yet: Nie sú vytvorené žiadne Advertisements. Kliknite na "Pridať
+              Advertisement" pre pridanie prvého advertisement.
           advertisement:
-            view_live_html: Zobraziť náhľad advertisement<br/><em>(otvorí sa v novom okne)</em>
+            view_live_html: Zobraziť náhľad advertisement<br/><em>(otvorí sa v novom
+              okne)</em>
             edit: Upraviť advertisement
             delete: Zmazať advertisement
+      advertisement_images:
+        show:
+          other: Daľšie Advertisement Images
+      categories:
+        show:
+          other: Daľšie Categories
       advertisements:
         show:
           other: Daľšie Advertisements
   activerecord:
     attributes:
-      'refinery/advertisements/advertisement':
+      refinery/advertisements/advertisement_image:
+        image: Image
+        advertisement: Advertisement
+      refinery/advertisements/category:
+        name: Name
+      refinery/advertisements/advertisement:
         title: Title
         body: Body
         expiry_date: Expiry Date

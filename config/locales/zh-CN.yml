@@ -1,31 +1,71 @@
 zh-CN:
   refinery:
     plugins:
+      advertisement_images:
+        title: Advertisement Images
+      categories:
+        title: Categories
       advertisements:
         title: Advertisements
     advertisements:
       admin:
+        advertisement_images:
+          actions:
+            create_new: "建立新的 Advertisement Image"
+            reorder: "对 Advertisement Images 重新排序"
+            reorder_done: "对 Advertisement Images 的重新排序结束"
+          records:
+            title: Advertisement Images
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有 Advertisement Images . 点击 "Add New Advertisement Image"
+              创建一个advertisement image.
+          advertisement_image:
+            view_live_html: "查看 advertisement image 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 advertisement image"
+            delete: "永久删除 advertisement image"
+        categories:
+          actions:
+            create_new: "建立新的 Category"
+            reorder: "对 Categories 重新排序"
+            reorder_done: "对 Categories 的重新排序结束"
+          records:
+            title: Categories
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有 Categories . 点击 "Add New Category" 创建一个category.
+          category:
+            view_live_html: "查看 category 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 category"
+            delete: "永久删除 category"
         advertisements:
           actions:
-            create_new: 建立新的 Advertisement
-            reorder: 对 Advertisements 重新排序
-            reorder_done: 对 Advertisements 的重新排序结束
+            create_new: "建立新的 Advertisement"
+            reorder: "对 Advertisements 重新排序"
+            reorder_done: "对 Advertisements 的重新排序结束"
           records:
             title: Advertisements
-            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
-
-            # There are no Advertisements yet. Click "Add New Advertisement" to add your first advertisement.
+            sorry_no_results: "对不起，未找到结果。"
             no_items_yet: 目前没有 Advertisements . 点击 "Add New Advertisement" 创建一个advertisement.
           advertisement:
-            view_live_html: 查看 advertisement 的最新内容.<br/><em>(新窗口中打开)</em>
-            edit: 编辑 advertisement
-            delete: 永久删除 advertisement
+            view_live_html: "查看 advertisement 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 advertisement"
+            delete: "永久删除 advertisement"
+      advertisement_images:
+        show:
+          other: "其他 Advertisement Images"
+      categories:
+        show:
+          other: "其他 Categories"
       advertisements:
         show:
-          other: 其他 Advertisements
+          other: "其他 Advertisements"
   activerecord:
     attributes:
-      'refinery/advertisements/advertisement':
+      refinery/advertisements/advertisement_image:
+        image: Image
+        advertisement: Advertisement
+      refinery/advertisements/category:
+        name: Name
+      refinery/advertisements/advertisement:
         title: Title
         body: Body
         expiry_date: Expiry Date

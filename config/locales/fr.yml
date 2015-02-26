@@ -1,10 +1,44 @@
 fr:
   refinery:
     plugins:
+      advertisement_images:
+        title: Advertisement Images
+      categories:
+        title: Categories
       advertisements:
         title: Advertisements
     advertisements:
       admin:
+        advertisement_images:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Advertisement Image
+            reorder: Réordonner les Advertisement Images
+            reorder_done: Fin de réordonnancement des Advertisement Images
+          records:
+            title: Advertisement Images
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Advertisement Image. Cliquer
+              sur "Créer un(e) nouve(au/l/lle) Advertisement Image" pour créer votre
+              premi(er/ère) advertisement image.
+          advertisement_image:
+            view_live_html: Voir ce(t/tte) advertisement image <br/><em>(Ouvre une
+              nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) advertisement image
+            delete: Supprimer définitivement ce(t/tte) advertisement image
+        categories:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Category
+            reorder: Réordonner les Categories
+            reorder_done: Fin de réordonnancement des Categories
+          records:
+            title: Categories
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Category. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Category" pour créer votre premi(er/ère) category.
+          category:
+            view_live_html: Voir ce(t/tte) category <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) category
+            delete: Supprimer définitivement ce(t/tte) category
         advertisements:
           actions:
             create_new: Créer un(e) nouve(au/l/lle) Advertisement
@@ -12,18 +46,32 @@ fr:
             reorder_done: Fin de réordonnancement des Advertisements
           records:
             title: Advertisements
-            sorry_no_results: "Désolé ! Aucun résultat."
-            no_items_yet: 'Il n''y a actuellement aucun(e) Advertisement. Cliquer sur "Créer un(e) nouve(au/l/lle) Advertisement" pour créer votre premi(er/ère) advertisement.'
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Advertisement. Cliquer sur
+              "Créer un(e) nouve(au/l/lle) Advertisement" pour créer votre premi(er/ère)
+              advertisement.
           advertisement:
-            view_live_html: Voir ce(t/tte) advertisement <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            view_live_html: Voir ce(t/tte) advertisement <br/><em>(Ouvre une nouvelle
+              fenêtre)</em>
             edit: Modifier ce(t/tte) advertisement
             delete: Supprimer définitivement ce(t/tte) advertisement
+      advertisement_images:
+        show:
+          other: Autres Advertisement Images
+      categories:
+        show:
+          other: Autres Categories
       advertisements:
         show:
           other: Autres Advertisements
   activerecord:
     attributes:
-      'refinery/advertisements/advertisement':
+      refinery/advertisements/advertisement_image:
+        image: Image
+        advertisement: Advertisement
+      refinery/advertisements/category:
+        name: Name
+      refinery/advertisements/advertisement:
         title: Title
         body: Body
         expiry_date: Expiry Date

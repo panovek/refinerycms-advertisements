@@ -1,11 +1,44 @@
 es:
   refinery:
     plugins:
+      advertisement_images:
+        title: Advertisement Images
+      categories:
+        title: Categories
       advertisements:
         title: Advertisements
-#        article: masculino/femenino
     advertisements:
       admin:
+        advertisement_images:
+          actions:
+            create_new: Crear nuevo advertisement image
+            reorder: Reordenar advertisement images
+            reorder_done: Reordenación de advertisement images completada
+          records:
+            title: Advertisement Images
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay advertisement images todavía. Pulsa en "Crear nuevo
+              Advertisement Image" para crear tu primer advertisement image.
+          advertisement_image:
+            view_live_html: Ver este advertisement image como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este advertisement image
+            delete: Borrar este advertisement image para siempre
+        categories:
+          actions:
+            create_new: Crear nuevo category
+            reorder: Reordenar categories
+            reorder_done: Reordenación de categories completada
+          records:
+            title: Categories
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay categories todavía. Pulsa en "Crear nuevo Category"
+              para crear tu primer category.
+          category:
+            view_live_html: Ver este category como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este category
+            delete: Borrar este category para siempre
         advertisements:
           actions:
             create_new: Crear nuevo advertisement
@@ -14,17 +47,30 @@ es:
           records:
             title: Advertisements
             sorry_no_results: Lo siento, no hay resultados
-            no_items_yet: No hay advertisements todavía. Pulsa en "Crear nuevo Advertisement" para crear tu primer advertisement.
+            no_items_yet: No hay advertisements todavía. Pulsa en "Crear nuevo Advertisement"
+              para crear tu primer advertisement.
           advertisement:
-            view_live_html: Ver este advertisement como abierto al público <br/><em>(abre en ventana nueva)</em>
+            view_live_html: Ver este advertisement como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
             edit: Editar este advertisement
             delete: Borrar este advertisement para siempre
+      advertisement_images:
+        show:
+          other: Otros advertisement images
+      categories:
+        show:
+          other: Otros categories
       advertisements:
         show:
           other: Otros advertisements
   activerecord:
     attributes:
-      'refinery/advertisements/advertisement':
+      refinery/advertisements/advertisement_image:
+        image: Image
+        advertisement: Advertisement
+      refinery/advertisements/category:
+        name: Name
+      refinery/advertisements/advertisement:
         title: Title
         body: Body
         expiry_date: Expiry Date

@@ -1,10 +1,44 @@
 nb:
   refinery:
     plugins:
+      advertisement_images:
+        title: Advertisement Images
+      categories:
+        title: Categories
       advertisements:
         title: Advertisements
     advertisements:
       admin:
+        advertisement_images:
+          actions:
+            create_new: Lag en ny Advertisement Image
+            reorder: Endre rekkefølgen på Advertisement Images
+            reorder_done: Ferdig å endre rekkefølgen Advertisement Images
+          records:
+            title: Advertisement Images
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Advertisement Images enda. Klikk på "Lag en
+              ny Advertisement Image" for å legge til din første advertisement image.
+          advertisement_image:
+            view_live_html: Vis hvordan denne advertisement image ser ut offentlig
+              <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne advertisement image
+            delete: Fjern denne advertisement image permanent
+        categories:
+          actions:
+            create_new: Lag en ny Category
+            reorder: Endre rekkefølgen på Categories
+            reorder_done: Ferdig å endre rekkefølgen Categories
+          records:
+            title: Categories
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Categories enda. Klikk på "Lag en ny Category"
+              for å legge til din første category.
+          category:
+            view_live_html: Vis hvordan denne category ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne category
+            delete: Fjern denne category permanent
         advertisements:
           actions:
             create_new: Lag en ny Advertisement
@@ -13,17 +47,30 @@ nb:
           records:
             title: Advertisements
             sorry_no_results: Beklager! Vi fant ikke noen resultater.
-            no_items_yet: Det er ingen Advertisements enda. Klikk på "Lag en ny Advertisement" for å legge til din første advertisement.
+            no_items_yet: Det er ingen Advertisements enda. Klikk på "Lag en ny Advertisement"
+              for å legge til din første advertisement.
           advertisement:
-            view_live_html: Vis hvordan denne advertisement ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            view_live_html: Vis hvordan denne advertisement ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
             edit: Rediger denne advertisement
             delete: Fjern denne advertisement permanent
+      advertisement_images:
+        show:
+          other: Andre Advertisement Images
+      categories:
+        show:
+          other: Andre Categories
       advertisements:
         show:
           other: Andre Advertisements
   activerecord:
     attributes:
-      'refinery/advertisements/advertisement':
+      refinery/advertisements/advertisement_image:
+        image: Image
+        advertisement: Advertisement
+      refinery/advertisements/category:
+        name: Name
+      refinery/advertisements/advertisement:
         title: Title
         body: Body
         expiry_date: Expiry Date

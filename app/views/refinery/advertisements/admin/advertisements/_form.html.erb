@@ -3,9 +3,15 @@
               :object => @advertisement,
               :include_object_name => true %>
 
+  <%= f.hidden_field :user_id, value: @advertisement.new_record? ? current_refinery_user.id : @advertisement.user_id %>
   <div class='field'>
     <%= f.label :title -%>
     <%= f.text_field :title, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :category -%>
+    <%= f.select :category_id, options_from_collection_for_select(Refinery::Advertisements::Category.all, 'id', 'name', @advertisement.category_id), :class => "larger widest" -%>
   </div>
 
   <div class='field'>

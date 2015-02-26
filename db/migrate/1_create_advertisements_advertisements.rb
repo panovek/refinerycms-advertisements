@@ -6,6 +6,8 @@ class CreateAdvertisementsAdvertisements < ActiveRecord::Migration
       t.text :body
       t.date :expiry_date
       t.integer :position
+      t.integer :user_id
+      t.integer :category_id
 
       t.timestamps
     end

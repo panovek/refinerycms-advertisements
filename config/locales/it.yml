@@ -1,10 +1,44 @@
 it:
   refinery:
     plugins:
+      advertisement_images:
+        title: Advertisement Images
+      categories:
+        title: Categories
       advertisements:
         title: Advertisements
     advertisements:
       admin:
+        advertisement_images:
+          actions:
+            create_new: Aggiungi Nuovo Advertisement Image
+            reorder: Riordina Advertisement Images
+            reorder_done: Termina il Riordino di Advertisement Images
+          records:
+            title: Advertisement Images
+            sorry_no_results: Spiacenti! Nessun risultato trovato
+            no_items_yet: Non ci sono ancora Advertisement Images. Clicca "Aggiungi
+              Nuovo Advertisement Image" per aggiungere il tuo primo advertisement
+              image.
+          advertisement_image:
+            view_live_html: Guarda live questo advertisement image <br/><em>(apre
+              una nuova finestra)</em>
+            edit: Modifica questo advertisement image
+            delete: Rimuovi per sempre questo advertisement image
+        categories:
+          actions:
+            create_new: Aggiungi Nuovo Category
+            reorder: Riordina Categories
+            reorder_done: Termina il Riordino di Categories
+          records:
+            title: Categories
+            sorry_no_results: Spiacenti! Nessun risultato trovato
+            no_items_yet: Non ci sono ancora Categories. Clicca "Aggiungi Nuovo Category"
+              per aggiungere il tuo primo category.
+          category:
+            view_live_html: Guarda live questo category <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo category
+            delete: Rimuovi per sempre questo category
         advertisements:
           actions:
             create_new: Aggiungi Nuovo Advertisement
@@ -12,18 +46,31 @@ it:
             reorder_done: Termina il Riordino di Advertisements
           records:
             title: Advertisements
-            sorry_no_results: "Spiacenti! Nessun risultato trovato"
-            no_items_yet: Non ci sono ancora Advertisements. Clicca "Aggiungi Nuovo Advertisement" per aggiungere il tuo primo advertisement.
+            sorry_no_results: Spiacenti! Nessun risultato trovato
+            no_items_yet: Non ci sono ancora Advertisements. Clicca "Aggiungi Nuovo
+              Advertisement" per aggiungere il tuo primo advertisement.
           advertisement:
-            view_live_html: Guarda live questo advertisement <br/><em>(apre una nuova finestra)</em>
+            view_live_html: Guarda live questo advertisement <br/><em>(apre una nuova
+              finestra)</em>
             edit: Modifica questo advertisement
             delete: Rimuovi per sempre questo advertisement
+      advertisement_images:
+        show:
+          other: Altri Advertisement Images
+      categories:
+        show:
+          other: Altri Categories
       advertisements:
         show:
           other: Altri Advertisements
   activerecord:
     attributes:
-      'refinery/advertisements/advertisement':
+      refinery/advertisements/advertisement_image:
+        image: Image
+        advertisement: Advertisement
+      refinery/advertisements/category:
+        name: Name
+      refinery/advertisements/advertisement:
         title: Title
         body: Body
         expiry_date: Expiry Date
