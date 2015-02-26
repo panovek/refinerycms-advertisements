@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      advertisements:
+        title: Advertisements
+#        article: masculino/femenino
+    advertisements:
+      admin:
+        advertisements:
+          actions:
+            create_new: Crear nuevo advertisement
+            reorder: Reordenar advertisements
+            reorder_done: Reordenación de advertisements completada
+          records:
+            title: Advertisements
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay advertisements todavía. Pulsa en "Crear nuevo Advertisement" para crear tu primer advertisement.
+          advertisement:
+            view_live_html: Ver este advertisement como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este advertisement
+            delete: Borrar este advertisement para siempre
+      advertisements:
+        show:
+          other: Otros advertisements
+  activerecord:
+    attributes:
+      'refinery/advertisements/advertisement':
+        title: Title
+        body: Body
+        expiry_date: Expiry Date

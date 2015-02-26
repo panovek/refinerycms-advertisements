@@ -1,0 +1,29 @@
+tr:
+  refinery:
+    plugins:
+      advertisements:
+        title: Advertisements
+    advertisements:
+      admin:
+        advertisements:
+          actions:
+            create_new: Yeni Ekle Advertisement
+            reorder: Tekrar sirala Advertisements
+            reorder_done: Tekrar siralama tamamlandiAdvertisements
+          records:
+            title: Advertisements
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Advertisements yok henuz.  Tikla "Yeni Ekle Advertisement" eklemek senin ilk advertisement.
+          advertisement:
+            view_live_html: Bunu canlu advertisement goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle advertisement
+            delete: Bunu Sil advertisement sonsuza dek
+      advertisements:
+        show:
+          other: Diger Advertisements
+  activerecord:
+    attributes:
+      'refinery/advertisements/advertisement':
+        title: Title
+        body: Body
+        expiry_date: Expiry Date

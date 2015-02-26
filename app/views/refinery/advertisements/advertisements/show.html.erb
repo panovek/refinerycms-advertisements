@@ -1,0 +1,39 @@
+<% content_for :body_content_title do %>
+  <%= @advertisement.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @advertisement.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Body</h1>
+    <p>
+      <%=raw @advertisement.body %>
+    </p>
+  </section>
+  <section>
+    <h1>Expiry Date</h1>
+    <p>
+      <%=raw @advertisement.expiry_date %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="advertisements">
+      <% @advertisements.each do |advertisement| %>
+        <li>
+          <%= link_to advertisement.title, refinery.advertisements_advertisement_path(advertisement) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

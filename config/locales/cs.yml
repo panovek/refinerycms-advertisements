@@ -1,0 +1,29 @@
+cs:
+  refinery:
+    plugins:
+      advertisements:
+        title: Advertisements
+    advertisements:
+      admin:
+        advertisements:
+          actions:
+            create_new: Přidat Advertisement
+            reorder: Řadit Advertisements
+            reorder_done: Konec řazení Advertisements
+          records:
+            title: Advertisements
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Advertisements. Zvolte "Přidat Advertisement" pro přidání prvního advertisement.
+          advertisement:
+            view_live_html: Zobrazit náhled advertisement<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit advertisement
+            delete: Smazat advertisement
+      advertisements:
+        show:
+          other: Další Advertisements
+  activerecord:
+    attributes:
+      'refinery/advertisements/advertisement':
+        title: Title
+        body: Body
+        expiry_date: Expiry Date

@@ -1,0 +1,29 @@
+it:
+  refinery:
+    plugins:
+      advertisements:
+        title: Advertisements
+    advertisements:
+      admin:
+        advertisements:
+          actions:
+            create_new: Aggiungi Nuovo Advertisement
+            reorder: Riordina Advertisements
+            reorder_done: Termina il Riordino di Advertisements
+          records:
+            title: Advertisements
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Advertisements. Clicca "Aggiungi Nuovo Advertisement" per aggiungere il tuo primo advertisement.
+          advertisement:
+            view_live_html: Guarda live questo advertisement <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo advertisement
+            delete: Rimuovi per sempre questo advertisement
+      advertisements:
+        show:
+          other: Altri Advertisements
+  activerecord:
+    attributes:
+      'refinery/advertisements/advertisement':
+        title: Title
+        body: Body
+        expiry_date: Expiry Date
