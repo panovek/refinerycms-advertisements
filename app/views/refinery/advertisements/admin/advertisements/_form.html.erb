@@ -22,6 +22,34 @@
   </div>
 
   <div class='field'>
+  <div id='images_fields'>
+    <% @advertisement.advertisement_images.build if !@advertisement.advertisement_images.present? %>
+    <%= f.fields_for :advertisement_images do |image| %>
+      <div class="parent">
+        <div class='field'>
+          <% if image.object.image.present? %>
+            <% if image.object.url %>
+              <div class='thumbnail'>
+              <%= link_to image.object.url, :title => image.object.image_name do %>
+                <%= image_tag image.object.url, size: "50x50" %>
+              <% end %>
+              <em><%= t('.or') %> </em><%= t('.replace') %>
+              </div>
+            <% else %>
+              <span><%= t('.add_file') %></span>
+            <% end %>
+            <%= image.file_field :image %>
+          <% else %>
+            <span><%= t('.add_file') %></span>
+            <%= image.file_field :image %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  </div>
+
+  <div class='field'>
     <%= f.label :expiry_date -%>
     <%= f.date_select :expiry_date -%>
   </div>

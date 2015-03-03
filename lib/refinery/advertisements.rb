@@ -1,10 +1,14 @@
 require 'refinerycms-core'
+require 'dragonfly'
 
 module Refinery
   autoload :AdvertisementsGenerator, 'generators/refinery/advertisements_generator'
 
   module Advertisements
+    #require 'refinery/advertisements/dragonfly'
     require 'refinery/advertisements/engine'
+    require 'refinery/advertisements/configuration'
+    autoload :Dragonfly, 'refinery/advertisements/dragonfly'
 
     class << self
       attr_writer :root

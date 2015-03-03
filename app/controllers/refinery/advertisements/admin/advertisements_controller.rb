@@ -8,7 +8,7 @@ module Refinery
         protected
 
         def advertisement_params
-          params.require(:advertisement).permit(:title, :body, :expiry_date, :category_id, :user_id)
+          params.require(:advertisement).permit(:title, :body, :expiry_date, :category_id, :user_id, :advertisement_images_attributes => ['image', 'id'])
         end
       end
     end

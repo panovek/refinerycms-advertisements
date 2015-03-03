@@ -1,0 +1,31 @@
+#images_fields {
+    padding-top: 10px;
+}
+
+.thumbnail {
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+/*@include transition(border .2s ease-in-out);*/
+}
+
+.thumbnail > img, a > img {
+  /*@include img-responsive;
+      margin-left: auto;
+      margin-right: auto;*/
+}
+
+.thumbnail .caption {
+    /*padding: $thumbnail-caption-padding;
+    color: $thumbnail-caption-color;*/
+}
+
+a.thumbnail:hover,
+   a.thumbnail:focus,
+   a.thumbnail.active {
+       border-color: #23527c;
+   }

@@ -1,3 +1,5 @@
+require 'dragonfly'
+
 module Refinery
   module Advertisements
     class Advertisement < Refinery::Core::BaseModel
@@ -6,7 +8,8 @@ module Refinery
       belongs_to :category
       belongs_to :user
       has_many :advertisement_images, dependent: :destroy
-      has_many :images, through: :advertisement_images, source: :image
+      #has_many :images, through: :advertisement_images, source: :image
+      accepts_nested_attributes_for :advertisement_images
 
       validates :title, :presence => true
       validates :body, :presence => true
