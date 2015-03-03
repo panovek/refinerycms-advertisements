@@ -22,7 +22,7 @@ module Refinery
       }
 
       def owner?(current_user)
-        self.user == current_user || current_user.has_role?(:refinery)
+        current_user && (self.user == current_user || current_user.has_role?(:refinery))
       end
 
       # To enable admin searching, add acts_as_indexed on searchable fields, for example:

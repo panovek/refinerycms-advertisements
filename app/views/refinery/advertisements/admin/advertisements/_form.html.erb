@@ -22,6 +22,11 @@
   </div>
 
   <div class='field'>
+    <%= f.label :expiry_date -%>
+    <%= f.date_select :expiry_date -%>
+  </div>
+
+  <div class='field'>
   <div id='images_fields'>
     <% @advertisement.advertisement_images.each do |image| %>
       <div class='thumbnail row' data-id=<%= image.id %>
@@ -62,11 +67,6 @@
   </div>
   </div>
 
-  <div class='field'>
-    <%= f.label :expiry_date -%>
-    <%= f.date_select :expiry_date -%>
-  </div>
-
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,
              :delete_title => t('delete', :scope => 'refinery.advertisements.admin.advertisements.advertisement'),
@@ -81,23 +81,15 @@
 
     function add_field(plus){
         plus.parents('div.parent').find('a.add_field').hide();
-        //plus.parents('div.parent').find('a.remove_field').show();
         prepare_new_field();
         $div = window.new_field.clone();
         $div.addClass('parent');
         $div.removeClass('new_field');
         $('#images_fields').append($div.show());
-        //radio_control();
     }
     $(function(){
-        //radio_control();
         $('div.parent').last().find('a.add_field').show();
-        $without_first = $('div.parent').not($('div.parent').first());
-        //if ($('div.parent').length > 1) {
-        //    $('div.parent').find('a.remove_field').show();
-        //}
         window.new_field = $('div.new_field').remove();
-        //$('input[checked="checked"]').attr('checked', 'checked');
     });
     function prepare_new_field(){
         var $inputs = window.new_field.find('input');
@@ -111,4 +103,3 @@
     }
   </script>
 <% end -%>
-

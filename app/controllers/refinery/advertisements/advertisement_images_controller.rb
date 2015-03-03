@@ -2,32 +2,17 @@ module Refinery
   module Advertisements
     class AdvertisementImagesController < ::ApplicationController
 
-      before_action :find_all_advertisement_images
-      before_action :find_page
-
-      def index
-        # you can use meta fields from your model instead (e.g. browser_title)
-        # by swapping @page for @advertisement_image in the line below:
-        present(@page)
-      end
-
-      def show
-        @advertisement_image = AdvertisementImage.find(params[:id])
-
-        # you can use meta fields from your model instead (e.g. browser_title)
-        # by swapping @page for @advertisement_image in the line below:
-        present(@page)
+      def destroy
+        image_file = AdvertisementImage.find_by_id(params[:id])
+        if image_file.present? && image_file.advertisement.user == current_refinery_user
+          @image_file_id = image_file.id
+          image_file.destroy
+        else
+          render "error"
+        end
       end
 
     protected
-
-      def find_all_advertisement_images
-        @advertisement_images = AdvertisementImage.order('position ASC')
-      end
-
-      def find_page
-        @page = ::Refinery::Page.where(:link_url => "/advertisement_images").first
-      end
 
     end
   end
