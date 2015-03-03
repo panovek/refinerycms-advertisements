@@ -23,29 +23,42 @@
 
   <div class='field'>
   <div id='images_fields'>
-    <% @advertisement.advertisement_images.build if !@advertisement.advertisement_images.present? %>
-    <%= f.fields_for :advertisement_images do |image| %>
-      <div class="parent">
-        <div class='field'>
-          <% if image.object.image.present? %>
-            <% if image.object.url %>
-              <div class='thumbnail'>
-              <%= link_to image.object.url, :title => image.object.image_name do %>
-                <%= image_tag image.object.url, size: "50x50" %>
-              <% end %>
-              <em><%= t('.or') %> </em><%= t('.replace') %>
-              </div>
-            <% else %>
-              <span><%= t('.add_file') %></span>
-            <% end %>
-            <%= image.file_field :image %>
-          <% else %>
-            <span><%= t('.add_file') %></span>
-            <%= image.file_field :image %>
-          <% end %>
-        </div>
+    <% @advertisement.advertisement_images.each do |image| %>
+      <div class='thumbnail row' data-id=<%= image.id %>
+        <%= link_to image.url, :title => image.image_name do %>
+          <%= image_tag image.url, class: 'image_list' %>
+        <% end %>
+          <div class='caption'>
+            <%= link_to t('.delete'), refinery.advertisements_admin_advertisement_image_path(image), method: :delete, remote: true, class: 'close_dialog button' %>
+          </div>
       </div>
     <% end %>
+
+    <div style="clear:both;"></div>
+
+    <% @advertisement.advertisement_images.build %>
+    <%= f.fields_for :advertisement_images, @advertisement.advertisement_images.last do |image| %>
+      <div class="parent">
+        <div class='field'>
+            <span><%= t('.add_file') %></span>
+            <%= image.file_field :image %>
+        </div>
+        <a href='#' onclick="add_field($(this)); return false" class="add_field" style='display: none'><%= refinery_icon_tag("add.png") %>
+          <div class="inline"><%= t('.add_source') %></div>
+        </a>
+      </div>
+    <% end %>
+    <div class="new_field" style="display: none">
+      <%= f.fields_for :advertisement_images, @advertisement.advertisement_images.last do |image| %>
+          <span><%= t('.add_file') %></span>
+          <%= image.file_field :image %>
+          <div class='add_remove_buttons'>
+            <a href='#' onclick="add_field($(this)); return false" class="add_field"><%= refinery_icon_tag("add.png") %>
+              <div class="inline"><%= t('.add_source') %></div>
+            </a>
+          </div>
+      <% end %>
+    </div>
   </div>
   </div>
 
@@ -65,5 +78,37 @@
     $(document).ready(function(){
       page_options.init(false, '', '');
     });
+
+    function add_field(plus){
+        plus.parents('div.parent').find('a.add_field').hide();
+        //plus.parents('div.parent').find('a.remove_field').show();
+        prepare_new_field();
+        $div = window.new_field.clone();
+        $div.addClass('parent');
+        $div.removeClass('new_field');
+        $('#images_fields').append($div.show());
+        //radio_control();
+    }
+    $(function(){
+        //radio_control();
+        $('div.parent').last().find('a.add_field').show();
+        $without_first = $('div.parent').not($('div.parent').first());
+        //if ($('div.parent').length > 1) {
+        //    $('div.parent').find('a.remove_field').show();
+        //}
+        window.new_field = $('div.new_field').remove();
+        //$('input[checked="checked"]').attr('checked', 'checked');
+    });
+    function prepare_new_field(){
+        var $inputs = window.new_field.find('input');
+        var date = Number(new Date);
+        $.each($inputs, function(){
+            var new_name = $(this).attr('name').replace(/\[\d+\]/,'['+date+']');
+            $(this).attr('name', new_name);
+            var new_id = $(this).attr('id') + date
+            $(this).attr('id', new_id);
+        });
+    }
   </script>
 <% end -%>
+
