@@ -5,10 +5,6 @@
   </span>
   <span class='actions'>
     
-    <%= link_to refinery_icon_tag("application_go.png"), refinery.advertisements_category_path(category),
-        :title => t('.view_live_html'),
-        :target => "_blank" %>
-    
     <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_advertisements_admin_category_path(category),
          :title => t('.edit') %>
     <%= link_to refinery_icon_tag("delete.png"), refinery.advertisements_admin_category_path(category),
